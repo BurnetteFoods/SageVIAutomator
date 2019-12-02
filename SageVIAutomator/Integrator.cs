@@ -37,7 +37,7 @@ namespace SageVIAutomator
         {
             var processInfo = new ProcessStartInfo(fullPath);
             processInfo.WorkingDirectory = uncPath;
-            processInfo.Arguments = string.Format("..launcher sota.ini ..SOA Startup.M4P -ARG DIRECT UION {0} {1} {2} {3} {4}", username, password, company, jobName, automan);
+            processInfo.Arguments = string.Format("..launcher sota.ini ..SOA Startup.M4P -ARG DIRECT UIOFF {0} {1} {2} {3} {4}", username, password, company, jobName, automan);
 
             return Process.Start(processInfo);
         }
@@ -47,6 +47,7 @@ namespace SageVIAutomator
             Process p = runJob();
 
             p.WaitForExit();
+            
         }
     }
 }
